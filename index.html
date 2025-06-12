@@ -23,13 +23,18 @@
       margin: 0;
       font-weight: bold;
       text-transform: uppercase;
-      animation: fadeInDown 1s ease-out;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
+      animation-delay: 0.2s;
     }
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
       color: #a0a0a0;
       position: relative;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
+      animation-delay: 0.4s;
     }
     header p:after {
       content: '';
@@ -55,12 +60,14 @@
     }
     .container h2, .container h3 {
       font-size: 2rem;
-      color: #fff; /* White by default */
+      color: #fff;
       margin-bottom: 20px;
       transition: color 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
     }
     .container h2:hover, .container h3:hover {
-      color: #1abc9c; /* Visible color on hover */
+      color: #1abc9c;
       transform: translateX(10px);
     }
     .content p {
@@ -68,6 +75,11 @@
       color: #a0a0a0;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
+    }
+    .content p.highlight {
+      color: #f39c12; /* Orange color for specified paragraphs */
     }
     .content p:hover {
       transform: translateY(-5px);
@@ -84,6 +96,8 @@
       transition: transform 0.3s ease;
       position: relative;
       padding-left: 20px;
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
     }
     .content ul li:before {
       content: '•';
@@ -91,17 +105,19 @@
       left: 0;
       color: #a0a0a0;
     }
+    .content ul li.highlight {
+      color: #f39c12; /* Orange color for specified list items */
+    }
+    .content ul li.highlight:before {
+      color: #f39c12; /* Matching dot color */
+    }
     .content ul li:hover {
       transform: translateY(-5px);
     }
-    /* Specific alignment and color for literature and assessment lists */
+    /* Specific alignment for literature and assessment lists */
     .aligned-list li {
       padding-left: 20px;
       text-indent: -20px;
-      color: #f39c12; /* Orange color like in the image */
-    }
-    .aligned-list li:before {
-      color: #f39c12; /* Matching dot color */
     }
     .content img {
       width: 100%;
@@ -151,6 +167,9 @@
       bottom: 0;
       width: 100%;
       box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      animation: fadeInDown 1s ease-out forwards;
+      animation-delay: 1.6s;
     }
     @media screen and (max-width: 768px) {
       .container {
@@ -183,8 +202,11 @@
       });
     });
     document.addEventListener('DOMContentLoaded', function() {
-      const elements = document.querySelectorAll('.content p, .content ul li');
+      const elements = document.querySelectorAll('.content p, .content ul li, header h1, header p, .container h2, .container h3, footer');
+      let delay = 0.2;
       elements.forEach(element => {
+        element.style.animationDelay = `${delay}s`;
+        delay += 0.2; // Staggered delay for each element
         element.addEventListener('mouseover', function() {
           this.style.transform = 'translateY(-5px)';
         });
@@ -213,44 +235,44 @@
       Men Husanboy Nabijonov Samarqand Davlat Tibbiyot Universiteti bitiruvchi talabasiman. Bugun step 1 imtihoniga tayyorgarlik jarayonimni sizlar bilan bo'lishmoqchiman.
     </p>
     <h3>STUDY PREPARATION</h3>
-    <p class="content">
+    <p class="content highlight">
       Tayyorgarligimga umumiy 2.5 yil vaqt ketdi. Tayyorgarligimni medstone jamosi asoschisi ustozimiz Shohrux Botirov maslahatlari va ko'rsatmalari bilan boshladim. Til bilish darajam ancha pastligi tufayli ko‘p hollarda tashlab ketgim kelardi lekin ustozim Shohrux Botirov har doim menga dalda berar shu joyidan o‘tib olsa barchasi yaxshi bo'lishini uqtirib har doim og‘ir damlarda men bilan bo‘lardi. Til o'rganish va step 1 ga tayyorlanishni parallel olib ketganligi sababli jarayon 2.5 yilga cho'zilib ketdi. So‘ngi 8 oy self study qildim sababi vaqtimni o‘zim boshqarardim. Guruh bilan ishlash har doim ajoyib bo‘lgan, ustoz bilan shug‘ullanganim uchun ko'pchilik qilgan xatolarni takrorlamasligimga sabab bo‘lgan.
     </p>
     <h3>Biz foydalangan adabiyotlar:</h3>
     <ul class="aligned-list">
-      <li>BnB</li>
-      <li>First Aid</li>
-      <li>Sketchy</li>
-      <li>UWORLD</li>
-      <li>Mehlman</li>
-      <li>Pathoma (Husain Sattar)</li>
+      <li class="highlight">BnB</li>
+      <li class="highlight">First Aid</li>
+      <li class="highlight">Sketchy</li>
+      <li class="highlight">UWORLD</li>
+      <li class="highlight">Mehlman</li>
+      <li class="highlight">Pathoma (Husain Sattar)</li>
     </ul>
     <h3>MY SELF ASSESSMENT RESULTS:</h3>
     <ul class="aligned-list">
-      <li>NBME 28 NEW - 65.5% (2.03.2025)</li>
-      <li>NBME 29 NEW - 69% (20.03.2025)</li>
-      <li>NBME 30 NEW - 73.5 % (7.04.2025)</li>
-      <li>NBME 31 NEW - 70.5% (25.04.2025)</li>
-      <li>UWSA 3 - 64.4 % (14.05.2025)</li>
-      <li>Free 120 NEW - 67.5% (23.05.2025)</li>
+      <li class="highlight">NBME 28 NEW - 65.5% (2.03.2025)</li>
+      <li class="highlight">NBME 29 NEW - 69% (20.03.2025)</li>
+      <li class="highlight">NBME 30 NEW - 73.5 % (7.04.2025)</li>
+      <li class="highlight">NBME 31 NEW - 70.5% (25.04.2025)</li>
+      <li class="highlight">UWSA 3 - 64.4 % (14.05.2025)</li>
+      <li class="highlight">Free 120 NEW - 67.5% (23.05.2025)</li>
     </ul>
     <h3>Imtihon kunini NBME natijalarim 70+ bo'lgandan keyin belgiladim.</h3>
     <h3>TEST DAY EXPERIENCE</h3>
-    <p class="content">
+    <p class="content highlight">
       Imtihonni Dubaida topshirdim. Dubaiga ABU DABI orqali borishga qaror qilib biletlarni sotib olgandim. Undan keyin ABU DABIda uzbeklarni ushlab qolishayotgani, vizali rejimga o'tishi mumkunligi va shu kabi muammolar meni ancha qo'rqitgandi. Imtihonni belgilagan kunimdan 2 kun oldin bordim ABU DABIga hamma o'zbeklarda muammo bo'lgani kabi meni ham airportda ushlab turishdi...
     </p>
     <h3>ADVICE FOR FUTURE TEST - TAKERS</h3>
-    <img src="https://via.placeholder.com/800x400.png?text=Rasm" alt="Chiroyli rasm">
+    <img src="images/Husanboy.png" alt="Chiroyli rasm">
     <ul>
-      <li>Har doim o'zingizga ishoning siz albatta bajara olasiz !</li>
-      <li>Pass bo'lish uchun alohida qobiliyat bo'lishi shart emas kuchli discipline, qattiq mehnat va sabr kerak xolos.</li>
-      <li>Ko'p case ko'ring, juda ko'p.</li>
+      <li class="highlight">Har doim o'zingizga ishoning siz albatta bajara olasiz !</li>
+      <li class="highlight">Pass bo'lish uchun alohida qobiliyat bo'lishi shart emas kuchli discipline, qattiq mehnat va sabr kerak xolos.</li>
+      <li class="highlight">Ko'p case ko'ring, juda ko'p.</li>
     </ul>
     <h3>MINNATDORCHILIK</h3>
-    <p class="content">
+    <p class="content highlight">
       Meni har doim qo'llab quvvatlab turgan Ota-onamga, Ustozim Shohrux Botirovga va bu yo'lda ishonch bildirgan, yelkadosh bo'lgan barchaga tashakkur! Ularning duosi, maslahatlari va ishonchi bilan bu natijalarga erishdim. Barchaga omad!
     </p>
-    <img src="https://via.placeholder.com/800x400.png?text=Rasm" alt="Chiroyli rasm">
+    <img src="images/Husanboy.png" alt="Chiroyli rasm">
     <h3>STUDY HARD, SAVE LIVES, ENJOY THE MEDICINE!</h3>
   </div>
   <footer>
