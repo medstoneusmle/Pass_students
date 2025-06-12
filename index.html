@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chiroyli Sayt - Post Sahifasi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Husanboy Pass</title>
   <style>
     body {
       margin: 0;
@@ -23,18 +23,13 @@
       margin: 0;
       font-weight: bold;
       text-transform: uppercase;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
-      animation-delay: 0.2s;
+      animation: fadeInDown 1s ease-out;
     }
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
       color: #a0a0a0;
       position: relative;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
-      animation-delay: 0.4s;
     }
     header p:after {
       content: '';
@@ -63,8 +58,6 @@
       color: #fff;
       margin-bottom: 20px;
       transition: color 0.3s ease, transform 0.3s ease;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
     }
     .container h2:hover, .container h3:hover {
       color: #1abc9c;
@@ -75,11 +68,6 @@
       color: #a0a0a0;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
-    }
-    .content p.highlight {
-      color: #f39c12; /* Orange color for specified paragraphs */
     }
     .content p:hover {
       transform: translateY(-5px);
@@ -96,8 +84,6 @@
       transition: transform 0.3s ease;
       position: relative;
       padding-left: 20px;
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
     }
     .content ul li:before {
       content: '•';
@@ -105,19 +91,16 @@
       left: 0;
       color: #a0a0a0;
     }
-    .content ul li.highlight {
-      color: #f39c12; /* Orange color for specified list items */
-    }
-    .content ul li.highlight:before {
-      color: #f39c12; /* Matching dot color */
-    }
     .content ul li:hover {
       transform: translateY(-5px);
     }
-    /* Specific alignment for literature and assessment lists */
     .aligned-list li {
       padding-left: 20px;
       text-indent: -20px;
+      color: #f39c12;
+    }
+    .aligned-list li:before {
+      color: #f39c12;
     }
     .content img {
       width: 100%;
@@ -129,6 +112,9 @@
     }
     .content img:hover {
       transform: scale(1.05);
+    }
+    .highlight {
+      color: #ff6600 !important;
     }
     @keyframes fadeInDown {
       from {
@@ -167,9 +153,6 @@
       bottom: 0;
       width: 100%;
       box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-      opacity: 0;
-      animation: fadeInDown 1s ease-out forwards;
-      animation-delay: 1.6s;
     }
     @media screen and (max-width: 768px) {
       .container {
@@ -190,7 +173,7 @@
     }
   </style>
   <script>
-    document.addEventListener('scroll', function() {
+    document.addEventListener('scroll', function () {
       const elements = document.querySelectorAll('.content p, .content ul li');
       elements.forEach(element => {
         const rect = element.getBoundingClientRect();
@@ -201,16 +184,13 @@
         }
       });
     });
-    document.addEventListener('DOMContentLoaded', function() {
-      const elements = document.querySelectorAll('.content p, .content ul li, header h1, header p, .container h2, .container h3, footer');
-      let delay = 0.2;
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.content p, .content ul li');
       elements.forEach(element => {
-        element.style.animationDelay = `${delay}s`;
-        delay += 0.2; // Staggered delay for each element
-        element.addEventListener('mouseover', function() {
+        element.addEventListener('mouseover', function () {
           this.style.transform = 'translateY(-5px)';
         });
-        element.addEventListener('mouseout', function() {
+        element.addEventListener('mouseout', function () {
           if (!this.classList.contains('in-view')) {
             this.style.transform = 'translateY(0)';
           }
@@ -226,18 +206,16 @@
     <p>Medstone faxriy a'zosi</p>
   </header>
   <div class="container">
-    <h2>Pass bo'lish uchun alohida qobiliyat bo'lishi shart emas, kuchli discipline, qattiq mehnat va sabr kerak xolos.</h2>
-    <p class="content">
-      Assalomu aleykum barchaga!
-    </p>
+    <h2 class="highlight">Pass bo'lish uchun alohida qobiliyat bo'lishi shart emas, kuchli discipline, qattiq mehnat va sabr kerak xolos.</h2>
+    <p class="content">Assalomu aleykum barchaga!</p>
     <img src="images/Husanboy.png" alt="Pass">
-    <p class="content">
-      Men Husanboy Nabijonov Samarqand Davlat Tibbiyot Universiteti bitiruvchi talabasiman. Bugun step 1 imtihoniga tayyorgarlik jarayonimni sizlar bilan bo'lishmoqchiman.
-    </p>
+    <p class="content">Men Husanboy Nabijonov Samarqand Davlat Tibbiyot Universiteti bitiruvchi talabasiman. Bugun step 1 imtihoniga tayyorgarlik jarayonimni sizlar bilan bo'lishmoqchiman.</p>
+
     <h3>STUDY PREPARATION</h3>
     <p class="content highlight">
       Tayyorgarligimga umumiy 2.5 yil vaqt ketdi. Tayyorgarligimni medstone jamosi asoschisi ustozimiz Shohrux Botirov maslahatlari va ko'rsatmalari bilan boshladim. Til bilish darajam ancha pastligi tufayli ko‘p hollarda tashlab ketgim kelardi lekin ustozim Shohrux Botirov har doim menga dalda berar shu joyidan o‘tib olsa barchasi yaxshi bo'lishini uqtirib har doim og‘ir damlarda men bilan bo‘lardi. Til o'rganish va step 1 ga tayyorlanishni parallel olib ketganligi sababli jarayon 2.5 yilga cho'zilib ketdi. So‘ngi 8 oy self study qildim sababi vaqtimni o‘zim boshqarardim. Guruh bilan ishlash har doim ajoyib bo‘lgan, ustoz bilan shug‘ullanganim uchun ko'pchilik qilgan xatolarni takrorlamasligimga sabab bo‘lgan.
     </p>
+
     <h3>Biz foydalangan adabiyotlar:</h3>
     <ul class="aligned-list">
       <li class="highlight">BnB</li>
@@ -247,6 +225,7 @@
       <li class="highlight">Mehlman</li>
       <li class="highlight">Pathoma (Husain Sattar)</li>
     </ul>
+
     <h3>MY SELF ASSESSMENT RESULTS:</h3>
     <ul class="aligned-list">
       <li class="highlight">NBME 28 NEW - 65.5% (2.03.2025)</li>
@@ -256,25 +235,29 @@
       <li class="highlight">UWSA 3 - 64.4 % (14.05.2025)</li>
       <li class="highlight">Free 120 NEW - 67.5% (23.05.2025)</li>
     </ul>
-    <h3>Imtihon kunini NBME natijalarim 70+ bo'lgandan keyin belgiladim.</h3>
+
     <h3>TEST DAY EXPERIENCE</h3>
     <p class="content highlight">
       Imtihonni Dubaida topshirdim. Dubaiga ABU DABI orqali borishga qaror qilib biletlarni sotib olgandim. Undan keyin ABU DABIda uzbeklarni ushlab qolishayotgani, vizali rejimga o'tishi mumkunligi va shu kabi muammolar meni ancha qo'rqitgandi. Imtihonni belgilagan kunimdan 2 kun oldin bordim ABU DABIga hamma o'zbeklarda muammo bo'lgani kabi meni ham airportda ushlab turishdi...
     </p>
+
     <h3>ADVICE FOR FUTURE TEST - TAKERS</h3>
-    <img src="images/Husanboy.png" alt="Chiroyli rasm">
+    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fimgflip.com%2Fmemegenerator%2F523773386%2FSkeleton-whispering-to-man&psig=AOvVaw2bGsMHuMUppQReRy276WzP&ust=1749803167917000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCI9_e6640DFQAAAAAdAAAAABAS" alt="Advise">
     <ul>
       <li class="highlight">Har doim o'zingizga ishoning siz albatta bajara olasiz !</li>
       <li class="highlight">Pass bo'lish uchun alohida qobiliyat bo'lishi shart emas kuchli discipline, qattiq mehnat va sabr kerak xolos.</li>
       <li class="highlight">Ko'p case ko'ring, juda ko'p.</li>
     </ul>
+
     <h3>MINNATDORCHILIK</h3>
     <p class="content highlight">
       Meni har doim qo'llab quvvatlab turgan Ota-onamga, Ustozim Shohrux Botirovga va bu yo'lda ishonch bildirgan, yelkadosh bo'lgan barchaga tashakkur! Ularning duosi, maslahatlari va ishonchi bilan bu natijalarga erishdim. Barchaga omad!
     </p>
-    <img src="images/Husanboy.png" alt="Chiroyli rasm">
+
+    <img src="images/Medstone Academy.png" alt="Chiroyli rasm">
     <h3>STUDY HARD, SAVE LIVES, ENJOY THE MEDICINE!</h3>
   </div>
+
   <footer>
     <p>© Medstone Academy | Tibbiyotga Muhabbat va Mukammallikka Intilish ifodasi.</p>
   </footer>
